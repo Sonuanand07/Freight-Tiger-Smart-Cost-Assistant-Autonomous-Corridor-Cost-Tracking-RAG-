@@ -1,0 +1,10 @@
+{
+  "model_name": "open-source-deterministic",
+  "number_of_calls": 21,
+  "total_input_tokens": 686,
+  "total_output_tokens": 668,
+  "total_tokens": 1354,
+  "cost_per_1k_input_usd": 0.0,
+  "cost_per_1k_output_usd": 0.0,
+  "estimated_cost_usd": "$0.0000"
+}
