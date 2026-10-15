@@ -9,7 +9,13 @@ Autonomous AI assistant that monitors freight route costs, detects out-of-the-or
 - **Data Ingested**: 2,940 shipment records across 7 nationwide freight corridors (Short, Medium, Long) spanning 2 full calendar years (2024–2025).
 - **Weekly Tracking**: Grouped strictly Monday to Sunday (`week_of` = Monday date `YYYY-MM-DD`).
 - **Core Formula**:
-  $$\text{Cost per Tonne-Km} = \frac{\sum \text{freight\_cost\_inr}}{\sum (\text{quantity\_tonnes} \times \text{distance\_km})}$$
+
+  $$
+  \text{Cost per Tonne-Km} =
+  \frac{\sum \text{freight\_cost\_inr}}
+       {\sum (\text{quantity\_tonnes} \times \text{distance\_km})}
+  $$
+
 - **Verification Against Sample Ground Truth**:
   | Corridor | Week Of | Assistant Cost | Sample Cost | vs. Own History (8-Wk) | vs. Similar Routes | Flagged Verdict | Matched Note |
   | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
