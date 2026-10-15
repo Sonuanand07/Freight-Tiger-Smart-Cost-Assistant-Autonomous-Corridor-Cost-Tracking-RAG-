@@ -8,13 +8,7 @@ Autonomous AI assistant that monitors freight route costs, detects out-of-the-or
 
 - **Data Ingested**: 2,940 shipment records across 7 nationwide freight corridors (Short, Medium, Long) spanning 2 full calendar years (2024–2025).
 - **Weekly Tracking**: Grouped strictly Monday to Sunday (`week_of` = Monday date `YYYY-MM-DD`).
-- **Core Formula**:
-
-  $$
-  \text{Cost per Tonne-Km} =
-  \frac{\sum \text{freight\_cost\_inr}}
-       {\sum (\text{quantity\_tonnes} \times \text{distance\_km})}
-  $$
+- **Core Formula**: `cost_per_tonne_km = sum(freight_cost_inr) / sum(quantity_tonnes * distance_km)`
 
 - **Verification Against Sample Ground Truth**:
   | Corridor | Week Of | Assistant Cost | Sample Cost | vs. Own History (8-Wk) | vs. Similar Routes | Flagged Verdict | Matched Note |
@@ -24,7 +18,7 @@ Autonomous AI assistant that monitors freight route costs, detects out-of-the-or
   | **Mumbai-Pune** | 2025-09-15 | **3.98** | **3.98** | **+9.2%** | **+23.6%** | `Yes` | *(blank)* |
 - **Reproducibility**: 3 untouched consecutive runs produced **100% identical outputs** (0 diff across all numbers, verdicts, and citations).
 - **Cost of Full Run**: 21 LLM/RAG calls, 1,354 total tokens, **$0.0000** total run spend (Open-Source Deterministic Model).
-- **Test Suite**: 13/13 unit and evaluation tests passing (`pytest`).
+- **Test Suite**: 14/14 unit and evaluation tests passing (`pytest`).
 
 ---
 
