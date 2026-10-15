@@ -189,6 +189,7 @@ From `output/token_cost_report.json`:
 
 ```
 freight_tiger_assistant/
+├── .gitignore                       # Ignores local caches, environments & generated ChromaDB files
 ├── data/
 │   ├── shipment_records.csv          # 2,940 raw shipments (2024-2025)
 │   ├── context_notes.csv             # 10 real-world notes & negative controls
@@ -207,7 +208,8 @@ freight_tiger_assistant/
 │   ├── __init__.py
 │   ├── test_pipeline.py              # Math & baseline tests
 │   ├── test_guardrails.py            # Anti-hallucination tests
-│   └── test_reproducibility.py       # Contract & 3-run reproducibility
+│   ├── test_reproducibility.py       # Contract & 3-run reproducibility
+│   └── test_web_app.py               # Web application favicon route test
 ├── output/
 │   ├── output.csv                    # Final evaluated submission output
 │   ├── output_all_weeks.csv          # Complete 728 route-week ledger
@@ -220,3 +222,4 @@ freight_tiger_assistant/
 └── requirements.txt                  # Python dependencies
 ```
 
+The root-level exploratory analysis scripts used during development are not part of the runnable application or required test suite. They rely on a machine-specific data path, so they are intentionally excluded from the submission; the portable pipeline and verification checks are in `src/` and `tests/`.
